@@ -14,7 +14,7 @@ From novices to experts, chatbots are an area in which everyone
 can participate. Exercise your creativity by creating chatbot
 skills for communicating, information, and fun.
 </p>},
-                image_url: 'dpchat.jpg',
+                image_url: 'ruby.jpg',
                 price: 20.00);
 Product.create!(title: '2 Build Chatbot Interactions',
                 description:
@@ -30,5 +30,5 @@ From novices to experts, chatbots are an area in which everyone
 can participate. Exercise your creativity by creating chatbot
 skills for communicating, information, and fun.
 </p>},
-                image_url: 'dpchat.jpg',
+                image_url: 'ruby.jpg',
                 price: 20.00)
