@@ -46,4 +46,22 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+  test "should not delete product if contain line items" do
+    assert_difference('Product.count', 0) do
+      product = products(:two)
+      delete product_url(product)
+    end
+
+    assert_redirected_to products_url
+  end
+
+  test "should delete product if does  not contain line items" do
+    assert_difference('Product.count', -1) do
+      product = products(:one)
+      delete product_url(product)
+    end
+
+    assert_redirected_to products_url
+  end
 end
