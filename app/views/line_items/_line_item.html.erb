@@ -1,0 +1,10 @@
+<% if @current_line_item && line_item.product_id == @current_line_item.product_id %>
+  <tr class="line-item-highlight">
+<% else %>
+  <tr>
+<% end %>
+<td class="quantity"><%= line_item.quantity %></td>
+<td><%= line_item.product.title %></td>
+<td class="price"><%= number_to_currency(line_item.total_price) %></td>
+<!--  <td>  <%#= button_to 'Delete Line Item', line_item_url(line_item_id: line_item.id), method: :delete, data: { confirm: 'Are you sure you want to delete this line item?' } %></td>-->
+</tr>

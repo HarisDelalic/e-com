@@ -8,5 +8,4 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
     assert_select 'main.store ul li', minimum: 3
     assert_select '.price', /\$[,\d]+\.\d\d/
   end
-
 end

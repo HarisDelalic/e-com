@@ -6,40 +6,59 @@
   table {
     border-collapse: collapse;
   }
+
   td {
-    padding: 0.5em;
+    padding: 1em;
   }
+
   td.quantity {
     white-space: nowrap;
   }
+
   td.quantity::after {
     content: " ×";
   }
+
   td.price {
+    vertical-align: bottom;
     font-weight: bold;
     text-align: right;
+    padding-top: 1em;
   }
+
   tfoot {
     th, th.price {
       font-weight: bold;
       padding-top: 1em;
     }
+
     th {
       text-align: right;
     }
+
     th.price {
       border-top: solid thin;
     }
   }
+
   input[type="submit"] {
-    background-color: #881;
     border-radius: 0.354em;
     border: solid thin #441;
-    color: white;
+    color: black;
     font-size: 1em;
     padding: 0.354em 1em;
   }
+
   input[type="submit"]:hover {
     background-color: #992;
+  }
+
+  .checkout {
+    background-color: #bfb
+  }
+
+
+  .empty_cart {
+    background-color: #881
   }
 }
