@@ -15,4 +15,12 @@ class Order < ApplicationRecord
       line_items << line_item
     end
   end
+
+  def charge! pay_type_params
+    pago_charge = Pago.new(order_id: id, payment_methods: Order.pay_types.key(pay_type), payment_details: pay_type_params)
+
+    if pago_charge.make_payment.succeeded?
+      OrderMailer.received(self ).deliver_later
+    end
+  end
 end
