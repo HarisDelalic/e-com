@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :authorize, only: %i[index, show]
 
   before_action :set_product, only: %i[ show edit update destroy ]
 
