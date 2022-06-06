@@ -38,8 +38,21 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_url
   end
 
-  test "should destroy user" do
+  test "should destroy user if not last" do
+    first_user = User.create(name: 'first_user_name', password: 'any', password_confirmation: 'any')
+    second_user = User.create(name: 'second_user', password: 'any', password_confirmation: 'any')
+
     assert_difference('User.count', -1) do
+      delete user_url(first_user)
+    end
+
+    assert_redirected_to users_url
+  end
+
+  test "should not destroy user if last" do
+    users(:maji).destroy
+
+    assert_no_difference('User.count') do
       delete user_url(@user)
     end
 
