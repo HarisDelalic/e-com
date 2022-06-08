@@ -1,0 +1,53 @@
+es:
+  layouts:
+    application:
+      title: "Biblioteca de Pragmatic"
+      home: "Inicio"
+      questions: "Preguntas"
+      news: "Noticias"
+      contact: "Contacto"
+  store:
+    index:
+      title_html: "Su Cat&aacute;logo de Pragmatic"
+      add_html: "A&ntilde;adir al Carrito"
+  carts:
+    index:
+      show: "Show_es"
+      edit: "Edit_es"
+      destroy: "Delete_es"
+      title: "Carts_es"
+    cart:
+      empty: "Vaciar Carrito"
+      title: "Carrito de la Compra"
+      confirmation: "Are You Sure?"
+      checkout: "Comprar"
+  number:
+    currency:
+      format:
+        unit: "$US"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%n&nbsp;%u"
+  orders:
+    new:
+      title: "Please Enter Your Details_es"
+    form:
+      submit: "Place Order_es"
+      address_html: "Address_es"
+      name: "Name_es"
+      email: "Email_es"
+      pay_type: "Forma de pago"
+      pay_prompt_html: "Seleccione un método de pago"
+      pay_types:
+        check: "Cheque"
+        credit_card: "Tarjeta de Crédito"
+        purchase_order: "Orden de Compra"
+      check_pay_type:
+        routing_number: "# de Enrutamiento"
+        account_number: "# de Cuenta"
+      credit_card_pay_type:
+        cc_number: "Número"
+        expiration_date: "Expiración"
+      purchase_order_pay_type:
+        po_number: "Número"

@@ -11,6 +11,8 @@ module Depot
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.middleware.use I18n::JS::Middleware
+
     # config.action_mailer.delivery_method = :test
 
     # Settings in config/environments/* take precedence over those specified here.

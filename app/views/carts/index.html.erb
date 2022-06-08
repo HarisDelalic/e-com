@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Carts</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
@@ -12,9 +12,9 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.show'), cart %></td>
+        <td><%= link_to t('.edit'), edit_cart_path(cart) %></td>
+        <td><%= link_to t('.destroy'), cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
