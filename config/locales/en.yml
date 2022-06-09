@@ -82,5 +82,8 @@ en:
         expiration_date: "Expiry"
       purchase_order_pay_type:
         po_number: "PO #"
+  thanks: "Gracias por su pedido"
+  created: "Successfully created"
+  destroyed: "Successfully deleted"
 
 

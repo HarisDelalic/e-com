@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
   validates :name, :address, :email, presence: true
-  # validates :pay_type, inclusion: pay_types.keys
+  # validates :pay_type, inclusion: :pay_types.keys
 
   enum pay_types: {
     "Check" => 0,

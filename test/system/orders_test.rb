@@ -18,7 +18,7 @@ class OrdersTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Order was successfully destroyed"
+    assert_text "Successfully deleted"
   end
 
   test "check routing number" do
@@ -32,7 +32,7 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in 'order_address', with: '123 Main Street'
     fill_in 'order_email', with: 'dave@example.com'
     # assert_no_selector "#order_routing_number"
-    select 'Check', from: 'Pay type'
+    select 'Check', from: 'Pay with'
     fill_in 'order_routing_number', with: '12345678'
     fill_in 'order_account_number', with: '123456'
 

@@ -28,15 +28,12 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
 
-    puts @order.pay_type
-
     respond_to do |format|
       if @order.save
         Cart.destroy(@cart.id)
         session[:cart_id] = nil
         OrderJob.perform_later(@order, pay_type_params)
-        # OrderMailer.received(@order).deliver_later
-        format.html { redirect_to store_index_url, notice: "Order was successfully created." }
+        format.html { redirect_to store_index_url(locale: I18n.locale), notice: I18n.t('.thanks') }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +46,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to order_url(@order), notice: "Order was successfully updated." }
+        format.html { redirect_to order_url(@order), notice: I18n.t('.created') }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,7 +60,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
+      format.html { redirect_to orders_url(locale: I18n.locale), notice: I18n.t('.destroyed') }
       format.json { head :no_content }
     end
   end

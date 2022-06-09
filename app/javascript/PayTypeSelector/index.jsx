@@ -12,7 +12,6 @@ class PayTypeSelector extends React.Component {
     }
 
     onPayTypeSelected(event) {
-        console.log(event.target.value);
         this.setState({selectedPayType: event.target.value});
     }
 
